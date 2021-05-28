@@ -22,6 +22,9 @@ import Route from '@ioc:Adonis/Core/Route'
 
 Route.get('/', 'FrontController.index')
 
-Route.get('/admin', async ({response})=>{
-  return response.send('Ok')
-})
+Route.get('/king/login', 'King/AuthController.login')
+Route.post('/king/login', 'King/AuthController.postLogin')
+
+Route.group(() => {
+  Route.get('/', 'King/KingController.index').as('index')
+}).prefix('king').as('king').middleware(['auth'])
