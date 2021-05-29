@@ -22,8 +22,8 @@ import Route from '@ioc:Adonis/Core/Route'
 
 Route.get('/', 'FrontController.index')
 
-Route.get('/king/login', 'King/AuthController.login')
-Route.post('/king/login', 'King/AuthController.postLogin')
+Route.get('/king/login', 'King/AuthController.login').as('king.login')
+Route.post('/king/login', 'King/AuthController.postLogin').as('king.login.post')
 
 Route.group(() => {
   Route.get('/', 'King/KingController.index').as('index')

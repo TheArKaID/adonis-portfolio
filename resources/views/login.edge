@@ -23,9 +23,21 @@
 
 <body>
     <div class="container">
+        @if(flashMessages.has('errors'))
+            <div class="row mt-2">
+                <div class="col-md-6 offset-md-3">
+                    <div class="alert alert-danger" role="alert">
+                        @each((value, key) in flashMessages.get('errors'))
+                            <p>Error on {{key}} : {{ value }}</p>
+                        @endeach
+                    </div>
+                </div>
+            </div>
+        @end
+
         <div class="row">
             <div class="col-md-4 centered">
-                <form action="/king" method="post">
+                <form action="{{ route('king.login.post') }}" method="post">
                     <input class="form-control" type="text" name="username" id="username" placeholder="USERNAME" required>
                     <input class="form-control" type="password" name="password" id="password" placeholder="PASSWORD" required>
                     <input class="btn btn-danger" style="width:100%" type="submit" value="Masuk">
