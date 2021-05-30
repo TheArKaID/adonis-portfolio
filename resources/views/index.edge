@@ -1,6 +1,90 @@
-@layout('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>MyResume Bootstrap Template - Index</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: MyResume - v4.2.0
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Mobile nav toggle button ======= -->
+    <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex flex-column justify-content-center">
+
+        <nav id="navbar" class="navbar nav-menu">
+            <ul>
+                <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a>
+                </li>
+                <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+                <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a>
+                </li>
+                <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
+                        <span>Portfolio</span></a></li>
+                <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a>
+                </li>
+                <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a>
+                </li>
+            </ul>
+        </nav><!-- .nav-menu -->
+
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex flex-column justify-content-center">
+        <div class="container" data-aos="zoom-in" data-aos-delay="100">
+            <h1>Brandon Johnson</h1>
+            <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
+            <div class="social-links">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+            <div>
+                <button class="btn btn-small" onclick="window.location = '{{ route('king.login') }}';">
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                </button>
+            </div>
+        </div>
+    </section><!-- End Hero -->
+
+    <!-- ======= Main Section ======= -->
     <main id="main">
         <!-- ======= About Section ======= -->
         <section id="about" class="about">
@@ -8,8 +92,10 @@
 
                 <div class="section-title">
                     <h2>About</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                        sint
+                        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
+                        Quia
                         fugiat sit
                         in iste officiis commodi quidem hic quas.</p>
                 </div>
@@ -32,7 +118,8 @@
                                     <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 May
                                             1995</span></li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong>
-                                        <span>www.example.com</span></li>
+                                        <span>www.example.com</span>
+                                    </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+123 456
                                             7890</span></li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>New York,
@@ -45,17 +132,21 @@
                                     <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span>
                                     </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong>
-                                        <span>email@example.com</span></li>
+                                        <span>email@example.com</span>
+                                    </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong>
-                                        <span>Available</span></li>
+                                        <span>Available</span>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                         <p>
-                            Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci
+                            Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt
+                            adipisci
                             omnis et ut.
                             Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-                            Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque
+                            Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus
+                            itaque
                             neque.
                             Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni
                             laudantium dolores.
@@ -72,8 +163,10 @@
 
                 <div class="section-title">
                     <h2>Facts</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                        sint
+                        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
+                        Quia
                         fugiat sit
                         in iste officiis commodi quidem hic quas.</p>
                 </div>
@@ -127,8 +220,10 @@
 
                 <div class="section-title">
                     <h2>Skills</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                        sint
+                        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
+                        Quia
                         fugiat sit
                         in iste officiis commodi quidem hic quas.</p>
                 </div>
@@ -208,8 +303,10 @@
 
                 <div class="section-title">
                     <h2>Resume</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                        sint
+                        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
+                        Quia
                         fugiat sit
                         in iste officiis commodi quidem hic quas.</p>
                 </div>
@@ -219,9 +316,11 @@
                         <h3 class="resume-title">Sumary</h3>
                         <div class="resume-item pb-0">
                             <h4>Brandon Johnson</h4>
-                            <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and
+                            <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing
+                                    and
                                     developing
-                                    user-centered digital/print marketing material from initial concept to final, polished
+                                    user-centered digital/print marketing material from initial concept to final,
+                                    polished
                                     deliverable.</em>
                             </p>
                             <ul>
@@ -246,7 +345,8 @@
                             <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
                             <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel
                                 ratione eius
-                                unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon
+                                unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque
+                                etlon
                                 sader mart dila
                             </p>
                         </div>
@@ -261,13 +361,15 @@
                                 <li>Lead in the design, development, and implementation of the graphic, layout, and
                                     production
                                     communication materials</li>
-                                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of
+                                <li>Delegate tasks to the 7 members of the design team and provide counsel on all
+                                    aspects of
                                     the project.
                                 </li>
                                 <li>Supervise the assessment of all graphic materials in order to ensure quality and
                                     accuracy of the
                                     design</li>
-                                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000
+                                <li>Oversee the efficient use of production project budgets ranging from $2,000 -
+                                    $25,000
                                 </li>
                             </ul>
                         </div>
@@ -276,11 +378,13 @@
                             <h5>2017 - 2018</h5>
                             <p><em>Stepping Stone Advertising, New York, NY</em></p>
                             <ul>
-                                <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and
+                                <li>Developed numerous marketing programs (logos, brochures,infographics, presentations,
+                                    and
                                     advertisements).</li>
                                 <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
                                 <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-                                <li>Created 4+ design presentations and proposals a month for clients and account managers
+                                <li>Created 4+ design presentations and proposals a month for clients and account
+                                    managers
                                 </li>
                             </ul>
                         </div>
@@ -296,8 +400,10 @@
 
                 <div class="section-title">
                     <h2>Portfolio</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                        sint
+                        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
+                        Quia
                         fugiat sit
                         in iste officiis commodi quidem hic quas.</p>
                 </div>
@@ -479,8 +585,10 @@
 
                 <div class="section-title">
                     <h2>Services</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                        sint
+                        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
+                        Quia
                         fugiat sit
                         in iste officiis commodi quidem hic quas.</p>
                 </div>
@@ -534,7 +642,8 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in"
+                        data-aos-delay="100">
                         <div class="icon-box iconbox-yellow">
                             <div class="icon">
                                 <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
@@ -549,7 +658,8 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in"
+                        data-aos-delay="200">
                         <div class="icon-box iconbox-red">
                             <div class="icon">
                                 <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
@@ -564,7 +674,8 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in"
+                        data-aos-delay="300">
                         <div class="icon-box iconbox-teal">
                             <div class="icon">
                                 <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
@@ -632,7 +743,8 @@
                                 <h4>Store Owner</h4>
                                 <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam
+                                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem
+                                    veniam
                                     duis minim tempor
                                     labore quem eram duis noster aute amet eram fore quis sint minim.
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
@@ -647,9 +759,11 @@
                                 <h4>Freelancer</h4>
                                 <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat
+                                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim
+                                    fugiat
                                     minim velit minim
-                                    dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                                    dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum
+                                    veniam.
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p>
                             </div>
@@ -717,8 +831,8 @@
                         <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                             <div class="row">
                                 <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
-                                        required>
+                                    <input type="text" name="name" class="form-control" id="name"
+                                        placeholder="Your Name" required>
                                 </div>
                                 <div class="col-md-6 form-group mt-3 mt-md-0">
                                     <input type="email" class="form-control" name="email" id="email"
@@ -726,8 +840,8 @@
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
-                                    required>
+                                <input type="text" class="form-control" name="subject" id="subject"
+                                    placeholder="Subject" required>
                             </div>
                             <div class="form-group mt-3">
                                 <textarea class="form-control" name="message" rows="5" placeholder="Message"
@@ -749,4 +863,54 @@
         </section><!-- End Contact Section -->
 
     </main>
-@endsection
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+
+    <footer id="footer">
+        <div class="container">
+            <h3>Brandon Johnson</h3>
+            <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi
+                placeat.</p>
+            <div class="social-links">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; Copyright <strong><span>MyResume</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: [license-url] -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/ -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/purecounter/purecounter.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
