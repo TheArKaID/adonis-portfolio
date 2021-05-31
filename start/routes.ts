@@ -27,4 +27,33 @@ Route.post('/king/login', 'King/AuthController.postLogin').as('king.login.post')
 
 Route.group(() => {
   Route.get('/', 'King/KingController.index').as('index')
+  
+  Route.get('profile', '').as('profile')
+  Route.post('profile', '').as('profile.post')
+  
+  Route.get('expertise', '').as('expertise')
+  Route.post('expertise', '').as('expertise.post')
+  Route.get('expertise/:id', '').as('expertise.edit')
+  Route.post('expertise/:id', '').as('expertise.edit.post')
+  
+  Route.get('work', '').as('work')
+  Route.post('work', '').as('work.post')
+  Route.get('work/:id', '').as('work.edit')
+  Route.post('work/:id', '').as('work.edit.post')
+  
+  Route.get('edu', '').as('edu')
+  Route.post('edu', '').as('edu.post')
+  Route.get('edu/:id', '').as('edu.edit')
+  Route.post('edu/:id', '').as('edu.edit.post')
+  
+  Route.get('interest', '').as('interest')
+  Route.post('interest', '').as('interest.post')
+  Route.get('interest/:id', '').as('interest.edit')
+  Route.post('interest/:id', '').as('interest.edit.post')
+  
+  Route.get('portfolio', '').as('portfolio')
+  Route.post('portfolio', '').as('portfolio.post')
+  Route.get('portfolio/:id', '').as('portfolio.edit')
+  Route.post('portfolio/:id', '').as('portfolio.edit.post')
+  
 }).prefix('king').as('king').middleware(['auth'])
