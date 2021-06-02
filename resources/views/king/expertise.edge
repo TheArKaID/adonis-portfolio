@@ -1,0 +1,43 @@
+@layout('layouts.app')
+
+@section('content')
+    <div class="col-md-12" style="margin: 16px 8px 16px 8px; width: -moz-available; font-family: ubuntuFont">
+        <div class="row myred" style="padding: 20px;">
+            <table class="table" style="color: white">
+                <thead class="thead-red">
+                    <tr>
+                        <th>
+                            Expertise
+                        </th>
+                        <th>
+                            Deskripsi
+                        </th>
+                        <th>
+
+                        </th>
+                    </tr>
+                </thead>
+                @if(expertises.length != 0)
+                @each(exp in expertises)
+                <tr>
+                    <td>{{exp.nama}}</td>
+                    <td>{{exp.keterangan}}</td>
+                    <td>
+                        <a href=''><i class='fas fa-edit'></i></a>
+                        <a href=''><i class='fas fa-trash'></i></a>
+                    </td>
+                </tr>
+                @endeach
+                @else
+                <tr>
+                    <td colspan="2">
+                        <p class="text-center font-italic">Tidak ada data</p>
+                    </td>
+                </tr>
+                @endif
+            </table>
+
+            <a href="" class="btn btn-danger">ADD</a>
+        </div>
+    </div>
+@endsection
