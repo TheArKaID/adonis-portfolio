@@ -27,7 +27,7 @@ Route.group(() => {
   Route.get('/', 'King/KingController.index').as('index')
   
   Route.get('profile', 'King/ProfilesController.index').as('profile')
-  Route.post('profile', '').as('profile.post')
+  Route.post('profile', 'King/ProfilesController.update').as('profile.post')
   
   Route.get('expertise', '').as('expertise')
   Route.post('expertise', '').as('expertise.post')
