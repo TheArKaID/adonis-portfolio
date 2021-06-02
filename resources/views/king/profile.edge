@@ -1,0 +1,41 @@
+@layout('layouts.app')
+
+@section('content')
+<div class="col-md-12" style="margin: 16px 8px 16px 8px; width: -moz-available; font-family: ubuntuFont">
+    <form action="?my=profile&then=edit&so=yes" method="POST">
+        <div class="row" style="margin-top: 16px; margin-bottom: 16px">
+            <!-- Sebelah Kiri -->
+            <div class="myred" style="width: 30%; padding: 20px 32px 20px 20px">
+                <img src="/assets/img/profile.jpg" alt="Arifia Kasastra" style="width: 100%;">
+                <label for="profile">Ganti Profile</label>
+                <input class="form-control-file" type="file" name="profile" id="profile">
+            </div>
+            <!-- Sebelah Kanan -->
+            <div class="myred" style="width: 69%; margin-left: 1%; padding: 20px 32px 20px 20px">
+                <label for="nama">NAMA</label>
+                <input class="form-control" type="text" name="nama" id="nama" value="{{ profile.nama }}" style="margin-bottom: 16px;" required>
+
+                <label for="statusSkill">Status Skill</label>
+                <input class="form-control" type="text" name="statusSkill" id="statusSkill" value="{{ profile.title }}" style="margin-bottom: 16px;" required>
+                
+                <label for="tentangSaya">Tentang Saya</label>
+                <textarea class="form-control" type="text" name="tentangSaya" id="tentangSaya" style="margin-bottom: 16px;" required>{{ profile.tentang }}</textarea>
+                
+                <label for="motto">Motto</label>
+                <input class="form-control" type="text" name="motto" id="motto" value="{{ profile.motto }}" style="margin-bottom: 16px;" required>
+                
+                <label for="alamat">Alamat</label>
+                <input class="form-control" type="text" name="alamat" id="alamat" value="{{ profile.alamat }}" style="margin-bottom: 16px;" required>
+                
+                <label for="noHP">No. HP</label>
+                <input class="form-control" type="text" name="noHP" id="noHP" value="{{ profile.nohp }}" style="margin-bottom: 16px;" required>
+                
+                <label for="email">E-mail</label>
+                <input class="form-control" type="text" name="email" id="email" value="{{ profile.email }}" style="margin-bottom: 16px;" required>
+
+                <input class="btn btn-danger" type="submit" value="SIMPAN">
+            </div>
+        </div>
+    </form>
+</div>
+@endsection

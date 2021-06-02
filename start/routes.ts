@@ -20,18 +20,13 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.group(()=>{
-  Route.get('/', 'FrontController.index')
-  Route.get('/:portfolio', 'FrontController.portfolio')
-}).middleware('front')
-
 Route.get('/king/login', 'King/AuthController.login').as('king.login')
 Route.post('/king/login', 'King/AuthController.postLogin').as('king.login.post')
 
 Route.group(() => {
   Route.get('/', 'King/KingController.index').as('index')
   
-  Route.get('profile', '').as('profile')
+  Route.get('profile', 'King/ProfilesController.index').as('profile')
   Route.post('profile', '').as('profile.post')
   
   Route.get('expertise', '').as('expertise')
@@ -60,3 +55,8 @@ Route.group(() => {
   Route.post('portfolio/:id', '').as('portfolio.edit.post')
   
 }).prefix('king').as('king').middleware(['auth'])
+
+Route.group(()=>{
+  Route.get('/', 'FrontController.index')
+  Route.get('/:portfolio', 'FrontController.portfolio')
+}).middleware('front')
