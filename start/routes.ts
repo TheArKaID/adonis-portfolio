@@ -20,7 +20,10 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', 'FrontController.index')
+Route.group(()=>{
+  Route.get('/', 'FrontController.index')
+  Route.get('/:portfolio', 'FrontController.portfolio')
+}).middleware('front')
 
 Route.get('/king/login', 'King/AuthController.login').as('king.login')
 Route.post('/king/login', 'King/AuthController.postLogin').as('king.login.post')
