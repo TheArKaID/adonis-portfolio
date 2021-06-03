@@ -6,7 +6,7 @@ export default class WorkExperience extends BaseModel {
   public id: number
 
   @column()
-  public tahun: number
+  public tahun: string
 
   @column()
   public posisi: string

@@ -37,7 +37,7 @@ Route.group(() => {
   
   Route.get('work', 'King/WorkExperiencesController.index').as('work')
   Route.get('work/create', 'King/WorkExperiencesController.create').as('work.create')
-  Route.post('work/create', '').as('work.create.post')
+  Route.post('work/create', 'King/WorkExperiencesController.store').as('work.create.post')
   Route.get('work/:id', '').as('work.edit')
   Route.post('work/:id', '').as('work.edit.post')
   
