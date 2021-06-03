@@ -35,8 +35,9 @@ Route.group(() => {
   Route.get('expertise/:id', '').as('expertise.edit')
   Route.post('expertise/:id', '').as('expertise.edit.post')
   
-  Route.get('work', '').as('work')
-  Route.post('work', '').as('work.post')
+  Route.get('work', 'King/WorkExperiencesController.index').as('work')
+  Route.get('work/create', 'King/WorkExperiencesController.create').as('work.create')
+  Route.post('work/create', '').as('work.create.post')
   Route.get('work/:id', '').as('work.edit')
   Route.post('work/:id', '').as('work.edit.post')
   

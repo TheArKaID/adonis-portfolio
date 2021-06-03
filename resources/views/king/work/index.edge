@@ -1,0 +1,41 @@
+@layout('layouts.app')
+
+@section('content')
+    <div class="col-md-12" style="margin: 16px 8px 16px 8px; width: -moz-available; font-family: ubuntuFont">
+        <div class="row myred" style="padding: 20px;">
+            <table class="table" style="color: white">
+                <thead class="thead-red">
+                    <tr>
+                        <th>Job</th>
+                        <th>Perusahaan</th>
+                        <th>Daerah</th>
+                        <th>Tahun</th>
+                        <th>Keterangan</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                @each(work in works)
+                    <tr>
+                        <td>{{ work.posisi }}</td>
+                        <td>{{ work.perusahaan }}</td>
+                        <td>{{ work.alamat }}</td>
+                        <td>{{ work.tahun }}</td>
+                        <td>{{ work.keterangan }}</td>
+                        <td>
+                            <a href=''><i class='fas fa-edit'></i></a>
+                            <a href=''><i class='fas fa-trash'></i></a>
+                        </td>
+                    </tr>
+                @else
+                    <tr>
+                        <td colspan="5">
+                            <p class="text-center font-italic">Tidak ada data</p>
+                        </td>
+                    </tr>
+                @endeach
+            </table>
+
+            <a href="{{ route('king.work.create') }}" class="btn btn-danger">ADD</a>
+        </div>
+    </div>
+@endsection
