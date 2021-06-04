@@ -1,0 +1,35 @@
+@layout('layouts.app')
+
+@section('content')
+    <div class="col-md-12" style="margin: 16px 8px 16px 8px; width: -moz-available; font-family: ubuntuFont">
+        <div class="row myred" style="padding: 20px;">
+            <table class="table" style="color: white">
+                <thead class="thead-red">
+                    <tr>
+                        <th>Tipe</th>
+                        <th>Deskripsi</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                @each(interest in interests)
+                <tr>
+                    <td>{{ interest.nama }}</td>
+                    <td>{{ interest.keterangan }}</td>
+                    <td>
+                        <a href=''><i class='fas fa-edit'></i></a>
+                        <a href=''><i class='fas fa-trash'></i></a>
+                    </td>
+                </tr>
+                @else
+                <tr>
+                    <td colspan="2">
+                        <p class="text-center font-italic">Tidak ada data</p>
+                    </td>
+                </tr>
+                @endeach
+            </table>
+
+            <a href="" class="btn btn-danger">ADD</a>
+        </div>
+    </div>
+@endsection

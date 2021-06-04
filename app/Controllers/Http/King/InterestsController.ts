@@ -1,7 +1,8 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class InterestsController {
-  public async index({ }: HttpContextContract) {
+  public async index({ view }: HttpContextContract) {
+    return view.render('king.interest.index')
   }
 
   public async create({ }: HttpContextContract) {
