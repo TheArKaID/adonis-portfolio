@@ -7,7 +7,7 @@ export default class Portfolio extends BaseModel {
 
   @column()
   public platform: string
-  
+
   @column()
   public judul: string
 

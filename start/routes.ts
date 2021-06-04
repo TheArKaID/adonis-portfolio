@@ -53,7 +53,7 @@ Route.group(() => {
   Route.get('interest/:id', '').as('interest.edit')
   Route.post('interest/:id', '').as('interest.edit.post')
   
-  Route.get('portfolio', '').as('portfolio')
+  Route.get('portfolio', 'King/PortfoliosController.index').as('portfolio')
   Route.post('portfolio', '').as('portfolio.post')
   Route.get('portfolio/:id', '').as('portfolio.edit')
   Route.post('portfolio/:id', '').as('portfolio.edit.post')
