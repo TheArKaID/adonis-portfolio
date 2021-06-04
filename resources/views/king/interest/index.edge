@@ -8,7 +8,7 @@
                     <tr>
                         <th>Tipe</th>
                         <th>Deskripsi</th>
-                        <th></th>
+                        <th>***</th>
                     </tr>
                 </thead>
                 @each(interest in interests)
@@ -29,7 +29,7 @@
                 @endeach
             </table>
 
-            <a href="" class="btn btn-danger">ADD</a>
+            <a href="{{ route('king.interest.create') }}" class="btn btn-danger">ADD</a>
         </div>
     </div>
 @endsection
