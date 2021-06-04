@@ -41,7 +41,7 @@ Route.group(() => {
   Route.get('work/:id', '').as('work.edit')
   Route.post('work/:id', '').as('work.edit.post')
   
-  Route.get('edu', '').as('edu')
+  Route.get('edu', 'King/EducationsController.index').as('edu')
   Route.post('edu', '').as('edu.post')
   Route.get('edu/:id', '').as('edu.edit')
   Route.post('edu/:id', '').as('edu.edit.post')
