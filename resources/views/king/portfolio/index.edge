@@ -14,12 +14,12 @@
                 </thead>
                 @each(portfolio in portfolios)
                     <tr>
-                        <td>{{ portfolio.nama }}</td>
-                        <td>{{ portfolio.github }}</td>
-                        <td>{{ portfolio.web }}</td>
+                        <td>{{ portfolio.judul }}</td>
+                        <td>{{ portfolio.git ?? '-' }}</td>
+                        <td>{{ portfolio.web ?? '-' }}</td>
                         <td>
-                            <a href='main?my=portofolio&then=edit&id=$portofoliodata[id]'><i class='fas fa-edit'></i></a>
-                            <a href='main?my=portofolio&then=delete&id=$portofoliodata[id]'><i class='fas fa-trash'></i></a>
+                            <a href=''><i class='fas fa-edit'></i></a>
+                            <a href=''><i class='fas fa-trash'></i></a>
                         </td>
                     </tr>
                 @else
@@ -31,7 +31,7 @@
                 @endeach
             </table>
 
-            <a href="main?my=portofolio&then=add" class="btn btn-danger">ADD</a>
+            <a href="{{ route('king.portfolio.create') }}" class="btn btn-danger">ADD</a>
         </div>
     </div>
 @endsection

@@ -15,7 +15,7 @@ export default class Portfolio extends BaseModel {
   public keterangan: string
 
   @column()
-  public github: string
+  public git: string
 
   @column()
   public web: string

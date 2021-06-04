@@ -31,7 +31,6 @@
             
             @if(flashMessages.has('errors'))
                 <div class="col-md-12">
-                    {{inspect(flashMessages.get('errors'))}}
                     <div class="alert alert-danger alert-dismissible fade show text-center" role="alert" style="margin-bottom: 0px">
                         @each((value, key) in flashMessages.get('errors'))
                             <p>Error on {{key}} : {{ value }}</p>
@@ -80,7 +79,7 @@
                         <a href="{{ route('king.interest')}}" {{ request.url() == "/king/interest" ? "class=active" : ""; }}><i class="fas fa-palette"></i> Interest</a>
                     </li>
                     <li>
-                        <a href="{{ route('king.portfolio')}}" {{ request.url() == "/king/portofolio" ? "class=active" : ""; }}><i class="fas fa-award"></i> Portfolio</a>
+                        <a href="{{ route('king.portfolio')}}" {{ request.url() == "/king/portfolio" ? "class=active" : ""; }}><i class="fas fa-award"></i> Portfolio</a>
                     </li>
                 </ul>
             </div>
