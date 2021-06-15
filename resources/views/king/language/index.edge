@@ -7,21 +7,17 @@
                 <thead class="thead-red">
                     <tr>
                         <th>
-                            Expertise
-                        </th>
-                        <th>
-                            Keterangan
+                            Programming Language
                         </th>
                         <th>
                             ***
                         </th>
                     </tr>
                 </thead>
-                @if(expertises.length != 0)
-                @each(exp in expertises)
+                @if(languages.length != 0)
+                @each(lang in languages)
                 <tr>
-                    <td>{{exp.nama}}</td>
-                    <td>{{exp.keterangan}}</td>
+                    <td>{{lang.name}}</td>
                     <td>
                         <a href=''><i class='fas fa-edit'></i></a>
                         <a href=''><i class='fas fa-trash'></i></a>
@@ -37,7 +33,7 @@
                 @endif
             </table>
 
-            <a href="{{ route('king.expertise.create') }}" class="btn btn-danger">ADD</a>
+            <a href="{{ route('king.programming-language.create') }}" class="btn btn-danger">ADD</a>
         </div>
     </div>
 @endsection

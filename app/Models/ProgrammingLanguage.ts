@@ -1,15 +1,12 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
-export default class Expertise extends BaseModel {
+export default class ProgrammingLanguage extends BaseModel {
   @column({ isPrimary: true })
   public id: number
 
   @column()
-  public nama: string
-
-  @column()
-  public keterangan: string
+  public name: string
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime

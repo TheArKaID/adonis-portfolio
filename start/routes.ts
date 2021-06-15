@@ -29,11 +29,11 @@ Route.group(() => {
   Route.get('profile', 'King/ProfilesController.index').as('profile')
   Route.post('profile', 'King/ProfilesController.update').as('profile.post')
   
-  Route.get('expertise', 'King/ExpertiseController.index').as('expertise')
-  Route.get('expertise/create', 'King/ExpertiseController.create').as('expertise.create')
-  Route.post('expertise/create', 'King/ExpertiseController.store').as('expertise.create.post')
-  Route.get('expertise/:id', '').as('expertise.edit')
-  Route.post('expertise/:id', '').as('expertise.edit.post')
+  Route.get('programming-language', 'King/ProgrammingLanguagesController.index').as('programming-language')
+  Route.get('programming-language/create', 'King/ProgrammingLanguagesController.create').as('programming-language.create')
+  Route.post('programming-language/create', 'King/ProgrammingLanguagesController.store').as('programming-language.create.post')
+  Route.get('programming-language/:id', '').as('programming-language.edit')
+  Route.post('programming-language/:id', '').as('programming-language.edit.post')
   
   Route.get('framework', 'King/FrameworksController.index').as('framework')
   Route.get('framework/create', 'King/FrameworksController.create').as('framework.create')

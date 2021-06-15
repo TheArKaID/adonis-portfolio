@@ -1,39 +1,35 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { rules, schema } from "@ioc:Adonis/Core/Validator";
-import Expertise from 'App/Models/Expertise'
+import ProgrammingLanguage from 'App/Models/ProgrammingLanguage'
 
-export default class ExpertiseController {
+export default class ProgrammingLanguageController {
   public async index({ view }: HttpContextContract) {
-    let expertises = await Expertise.all()
+    let languages = await ProgrammingLanguage.all()
 
-    return view.render('king.expertise.index', {
-      expertises
-    })
+    return view.render('king.language.index', { languages })
   }
 
   public async create({ view }: HttpContextContract) {
-    return view.render('king.expertise.create')
+    return view.render('king.language.create')
   }
 
   public async store({ request, response, session }: HttpContextContract) {
     let validation = schema.create({
-      expertise: schema.string({ escape: true, trim: true }, [
+      name: schema.string({ escape: true, trim: true }, [
         rules.required(),
         rules.maxLength(255)
-      ]),
-      keterangan: schema.string()
+      ])
     })
 
     let data = await request.validate({schema: validation})
 
-    await Expertise.create({
-      nama: data.expertise,
-      keterangan: data.keterangan
+    await ProgrammingLanguage.create({
+      name: data.name
     })
 
-    session.flash('success', 'Expertised Added Successfully')
+    session.flash('success', 'Programming Language Added Successfully')
 
-    return response.redirect().toRoute('king.expertise')
+    return response.redirect().toRoute('king.programming-language')
   }
 
   public async show ({}: HttpContextContract) {
