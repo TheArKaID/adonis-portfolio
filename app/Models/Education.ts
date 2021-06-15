@@ -12,6 +12,9 @@ export default class Education extends BaseModel {
   public jurusan: string
 
   @column()
+  public institusi: string
+
+  @column()
   public keterangan: string
 
   @column()

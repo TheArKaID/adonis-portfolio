@@ -8,15 +8,16 @@
                     <tr>
                         <th>Tingkat Pendidikan</th>
                         <th>Jurusan</th>
+                        <th>Institusi</th>
                         <th>Tahun</th>
-                        <th>
-                        </th>
+                        <th>***</th>
                     </tr>
                 </thead>
                 @each(edu in educations)
                     <tr>
                         <td>{{ edu.tingkat }}</td>
                         <td>{{ edu.jurusan }}</td>
+                        <td>{{ edu.institusi }}</td>
                         <td>{{ edu.tahun }}</td>
                         <td>
                             <a href='main?my=edu&then=edit&id=$edudata[id]'><i class='fas fa-edit'></i></a>

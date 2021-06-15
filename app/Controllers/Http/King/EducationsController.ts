@@ -17,6 +17,7 @@ export default class EducationsController {
     let validation = schema.create({
       tingkat: schema.string({ trim: true, escape: true }),
       jurusan: schema.string({ trim: true, escape: true }),
+      institusi: schema.string({ trim: true, escape: true }),
       tahun: schema.string({ trim: true, escape: true }),
       keterangan: schema.string({ trim: true, escape: true }),
       alamat: schema.string({ trim: true, escape: true }),
@@ -27,6 +28,7 @@ export default class EducationsController {
     await Education.create({
       tingkat: data.tingkat,
       jurusan: data.jurusan,
+      institusi: data.institusi,
       tahun: data.tahun,
       keterangan: data.keterangan,
       alamat: data.alamat
