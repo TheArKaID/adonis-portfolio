@@ -8,19 +8,21 @@
                     <tr>
                         <th>Job</th>
                         <th>Perusahaan</th>
+                        <th>Tasks</th>
                         <th>Daerah</th>
                         <th>Tahun</th>
-                        <th>Keterangan</th>
-                        <th></th>
+                        <th>Status</th>
+                        <th>***</th>
                     </tr>
                 </thead>
                 @each(work in works)
                     <tr>
                         <td>{{ work.posisi }}</td>
                         <td>{{ work.perusahaan }}</td>
+                        <td>{{ work.tasks }}</td>
                         <td>{{ work.alamat }}</td>
                         <td>{{ work.tahun }}</td>
-                        <td>{{ work.keterangan }}</td>
+                        <td>{{ work.status }}</td>
                         <td>
                             <a href=''><i class='fas fa-edit'></i></a>
                             <a href=''><i class='fas fa-trash'></i></a>

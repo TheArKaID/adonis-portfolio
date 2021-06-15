@@ -15,10 +15,13 @@ export default class WorkExperience extends BaseModel {
   public perusahaan: string
 
   @column()
+  public tasks: string
+
+  @column()
   public alamat: string
 
   @column()
-  public keterangan: string
+  public status: string
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime

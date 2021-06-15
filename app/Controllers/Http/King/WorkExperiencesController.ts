@@ -23,11 +23,12 @@ export default class WorkExperiencesController {
         rules.required(),
         rules.maxLength(255)
       ]),
+      tasks: schema.string({ trim: true, escape: true }),
       alamat: schema.string({ trim: true, escape: true }),
       tahun: schema.string({ trim: true, escape: true }, [
         rules.maxLength(4)
       ]),
-      keterangan: schema.string({ trim: true, escape: true }, [
+      status: schema.string({ trim: true, escape: true }, [
         rules.required(),
         rules.maxLength(255)
       ])
@@ -38,9 +39,10 @@ export default class WorkExperiencesController {
     await WorkExperience.create({
       posisi: data.posisi,
       perusahaan: data.perusahaan,
+      tasks: data.tasks,
       alamat: data.alamat,
       tahun: data.tahun,
-      keterangan: data.keterangan
+      status: data.status
     })
 
     session.flash('success', 'Work Experience Added Successfully')
