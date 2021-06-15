@@ -35,6 +35,12 @@ Route.group(() => {
   Route.get('expertise/:id', '').as('expertise.edit')
   Route.post('expertise/:id', '').as('expertise.edit.post')
   
+  Route.get('framework', 'King/FrameworksController.index').as('framework')
+  Route.get('framework/create', 'King/FrameworksController.create').as('framework.create')
+  Route.post('framework/create', 'King/FrameworksController.store').as('framework.create.post')
+  Route.get('framework/:id', '').as('framework.edit')
+  Route.post('framework/:id', '').as('framework.edit.post')
+
   Route.get('work', 'King/WorkExperiencesController.index').as('work')
   Route.get('work/create', 'King/WorkExperiencesController.create').as('work.create')
   Route.post('work/create', 'King/WorkExperiencesController.store').as('work.create.post')
