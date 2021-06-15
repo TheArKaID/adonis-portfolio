@@ -3,24 +3,18 @@
 @section('content')
     <div class="col-md-12" style="margin: 16px 8px 16px 8px; width: -moz-available; font-family: ubuntuFont">
         <div class="row myred" style="padding: 20px;">
-            <form style="width: 100%" action="{{ route('king.expertise.create.post') }}" method="post">
+            <form style="width: 100%" action="{{ route('king.framework.create.post') }}" method="post">
                 <table class="table" style="color: white;">
                     <thead class="thead-red">
                         <tr>
                             <th>
-                                Expertise
-                            </th>
-                            <th>
-                                Keterangan
+                                Framework Name
                             </th>
                         </tr>
                     </thead>
                     <tr>
                         <td>
-                            <input class="form-control" type="text" name="expertise" id="expertise" required>
-                        </td>
-                        <td>
-                            <input class="form-control" type="text" name="keterangan" id="keterangan" required>
+                            <input class="form-control" type="text" name="framework" id="framework" required>
                         </td>
                     </tr>
                 </table>
