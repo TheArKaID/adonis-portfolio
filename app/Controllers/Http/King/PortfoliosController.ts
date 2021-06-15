@@ -38,10 +38,10 @@ export default class PortfoliosController {
     let prev2_name = file_name + '-2.' + data.preview2.extname
     let prev3_name = file_name + '-3.' + data.preview3.extname
 
-    await data.thumbnail.move(Application.tmpPath('portfolio'), { name: thumbnail_name })
-    await data.preview1.move(Application.tmpPath('portfolio'), { name: prev1_name })
-    await data.preview2.move(Application.tmpPath('portfolio'), { name: prev2_name })
-    await data.preview3.move(Application.tmpPath('portfolio'), { name: prev3_name })
+    await data.thumbnail.move(Application.tmpPath('portfolio'), { name: thumbnail_name, overwrite: true })
+    await data.preview1.move(Application.tmpPath('portfolio'), { name: prev1_name, overwrite: true })
+    await data.preview2.move(Application.tmpPath('portfolio'), { name: prev2_name, overwrite: true })
+    await data.preview3.move(Application.tmpPath('portfolio'), { name: prev3_name, overwrite: true })
 
     let images_data = [thumbnail_name, prev1_name, prev2_name, prev3_name]
     let images = images_data.join('|')
@@ -67,5 +67,11 @@ export default class PortfoliosController {
   }
 
   public async destroy({ }: HttpContextContract) {
+  }
+  
+  public async image({ params, response }: HttpContextContract) {
+    return response.download(
+      Application.tmpPath('portfolio', params.filename)
+    )
   }
 }

@@ -69,5 +69,6 @@ Route.group(() => {
 
 Route.group(()=>{
   Route.get('/', 'FrontController.index')
+  Route.get('/portfolio/image/:filename', 'King/PortfoliosController.image').as('portfolio.image')
   Route.get('/:portfolio', 'FrontController.portfolio')
 }).middleware('front')
