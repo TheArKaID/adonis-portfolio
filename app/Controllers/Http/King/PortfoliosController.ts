@@ -1,6 +1,7 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { rules, schema } from "@ioc:Adonis/Core/Validator";
 import Portfolio from 'App/Models/Portfolio'
+import Application from '@ioc:Adonis/Core/Application'
 
 export default class PortfoliosController {
   public async index({ view }: HttpContextContract) {
@@ -23,20 +24,35 @@ export default class PortfoliosController {
       git: schema.string.optional({ trim: true, escape: true }),
       web: schema.string.optional({ trim: true, escape: true }),
       keterangan: schema.string({ trim: true, escape: true }),
-      thumbnail: schema.string.optional({ trim: true, escape: true }),
-      preview1: schema.string.optional({ trim: true, escape: true }),
-      preview2: schema.string.optional({ trim: true, escape: true }),
-      preview3: schema.string.optional({ trim: true, escape: true })
+      thumbnail: schema.file({ extnames: ['jpg', 'png'] }),
+      preview1: schema.file({ extnames: ['jpg', 'png'] }),
+      preview2: schema.file({ extnames: ['jpg', 'png'] }),
+      preview3: schema.file({ extnames: ['jpg', 'png'] })
     })
 
     let data = await request.validate({ schema: validation })
+
+    let file_name = data.judul.toLowerCase().replace(' ', '-')
+    let thumbnail_name = file_name + '-0.' + data.thumbnail.extname
+    let prev1_name = file_name + '-1.' + data.preview1.extname
+    let prev2_name = file_name + '-2.' + data.preview2.extname
+    let prev3_name = file_name + '-3.' + data.preview3.extname
+
+    await data.thumbnail.move(Application.tmpPath('portfolio'), { name: thumbnail_name })
+    await data.preview1.move(Application.tmpPath('portfolio'), { name: prev1_name })
+    await data.preview2.move(Application.tmpPath('portfolio'), { name: prev2_name })
+    await data.preview3.move(Application.tmpPath('portfolio'), { name: prev3_name })
+
+    let images_data = [thumbnail_name, prev1_name, prev2_name, prev3_name]
+    let images = images_data.join('|')
 
     await Portfolio.create({
       judul: data.judul,
       platform: data.platform,
       git: data.git,
       web: data.web,
-      keterangan: data.keterangan
+      keterangan: data.keterangan,
+      foto: images
     })
 
     session.flash('success', 'Portfolio Added Successfully')
