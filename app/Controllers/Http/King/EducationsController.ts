@@ -17,11 +17,7 @@ export default class EducationsController {
     let validation = schema.create({
       tingkat: schema.string({ trim: true, escape: true }),
       jurusan: schema.string({ trim: true, escape: true }),
-      tahun: schema.string({ trim: true, escape: true }, [
-        rules.required(),
-        rules.maxLength(4),
-        rules.minLength(4)
-      ]),
+      tahun: schema.string({ trim: true, escape: true }),
       keterangan: schema.string({ trim: true, escape: true }),
       alamat: schema.string({ trim: true, escape: true }),
     })
