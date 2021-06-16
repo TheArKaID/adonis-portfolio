@@ -32,7 +32,8 @@ export default class PortfoliosController {
 
     let data = await request.validate({ schema: validation })
 
-    let file_name = data.judul.toLowerCase().replace(' ', '-')
+    let file_name = data.judul.toLowerCase().replace(/ /g, '-')
+
     let thumbnail_name = file_name + '-0.' + data.thumbnail.extname
     let prev1_name = file_name + '-1.' + data.preview1.extname
     let prev2_name = file_name + '-2.' + data.preview2.extname
