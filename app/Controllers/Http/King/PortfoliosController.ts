@@ -23,7 +23,7 @@ export default class PortfoliosController {
       platform: schema.enum(['web', 'desktop', 'mobile']),
       git: schema.string.optional({ trim: true }),
       web: schema.string.optional({ trim: true }),
-      keterangan: schema.string({ trim: true, escape: true }),
+      keterangan: schema.string({ trim: true }),
       thumbnail: schema.file({ extnames: ['jpg', 'png'] }),
       preview1: schema.file({ extnames: ['jpg', 'png'] }),
       preview2: schema.file({ extnames: ['jpg', 'png'] }),
