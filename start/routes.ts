@@ -69,6 +69,7 @@ Route.group(() => {
 
 Route.group(()=>{
   Route.get('/', 'FrontController.index')
+  Route.post('/send-message', 'FrontController.sendMessage').as('send.message')
   Route.get('/portfolio/image/:filename', 'King/PortfoliosController.image').as('portfolio.image')
   Route.get('/:portfolio', 'FrontController.portfolio')
 }).middleware('front')
