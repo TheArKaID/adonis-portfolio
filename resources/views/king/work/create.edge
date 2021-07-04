@@ -3,42 +3,79 @@
 @section('content')
     <div class="col-md-12" style="margin: 16px 8px 16px 8px; width: -moz-available; font-family: ubuntuFont">
         <div class="row myred" style="padding: 20px;">
-            <form style="width: 100%" action="{{ route('king.work.create.post') }}" method="post">
-                <table class="table" style="color: white;">
-                    <thead class="thead-red">
-                        <tr>
-                            <th>Posisi</th>
-                            <th>Perusahaan</th>
-                            <th>Tasks</th>
-                            <th>Alamat</th>
-                            <th>Tahun</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tr>
-                        <td>
+            <form style="width: 100%" id="formWork" action="{{ route('king.work.create.post') }}" method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="posisi">Posisi</label>
                             <input class="form-control" type="text" name="posisi" id="posisi" required>
-                        </td>
-                        <td>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="perusahaan">Perusahaan</label>
                             <input class="form-control" type="text" name="perusahaan" id="perusahaan" required>
-                        </td>
-                        <td>
-                            <textarea name="tasks" class="form-control" id="tasks" cols="30" rows="10"></textarea>
-                        </td>
-                        <td>
-                            <input class="form-control" type="text" name="alamat" id="alamat" required>
-                        </td>
-                        <td>
-                            <input class="form-control" type="text" name="tahun" id="tahun" required>
-                        </td>
-                        <td>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="status">Status</label>
                             <input class="form-control" type="text" name="status" id="status" required>
-                        </td>
-                    </tr>
-
-                </table>
-                <input class="btn btn-danger" type="submit" value="SAVE">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="tahun">Tahun</label>
+                            <input class="form-control" type="text" name="tahun" id="tahun" required>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="alaat">Alamat</label>
+                            <textarea name="alamat" id="alamat" class="form-control" cols="30" rows="5" required></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group" style="color: black">
+                            <label for="tasks">Tasks</label>
+                            <textarea name="tasks" id="tasks" class="form-control" cols="30" rows="10" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-danger" onclick="submitForm()" type="submit">Simpan</button>
             </form>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script src="/assets/js/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#tasks' ))
+            .then( editor => {
+                // editor.ui.view.editable.element.style.height = '500px';
+                console.log('Editor initialized');
+            } )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+    <script>
+        function submitForm() {
+            document.getElementById('formWork').submit()
+        }
+    </script>
+@endsection
+
+@section('styles')
+<style>
+    .ck-editor__editable
+    {
+       min-height: 150px !important;
+       /* max-height: 400px !important; */
+    }
+   </style>
+   
 @endsection
