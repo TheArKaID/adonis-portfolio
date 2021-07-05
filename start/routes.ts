@@ -32,8 +32,8 @@ Route.group(() => {
   Route.get('programming-language', 'King/ProgrammingLanguagesController.index').as('programming-language')
   Route.get('programming-language/create', 'King/ProgrammingLanguagesController.create').as('programming-language.create')
   Route.post('programming-language/create', 'King/ProgrammingLanguagesController.store').as('programming-language.create.post')
-  Route.get('programming-language/:id', '').as('programming-language.edit')
-  Route.post('programming-language/:id', '').as('programming-language.edit.post')
+  Route.get('programming-language/:id', 'King/ProgrammingLanguagesController.show').as('programming-language.edit')
+  Route.post('programming-language/:id', 'King/ProgrammingLanguagesController.update').as('programming-language.edit.post')
   
   Route.get('framework', 'King/FrameworksController.index').as('framework')
   Route.get('framework/create', 'King/FrameworksController.create').as('framework.create')

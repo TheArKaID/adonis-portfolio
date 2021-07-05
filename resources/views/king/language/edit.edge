@@ -1,0 +1,17 @@
+@layout('layouts.app')
+
+@section('content')
+    <div class="col-md-12" style="margin: 16px 8px 16px 8px; width: -moz-available; font-family: ubuntuFont">
+        <div class="row myred" style="padding: 20px;">
+            <form style="width: 100%" action="{{ route('king.programming-language.edit.post', [lang.id]) }}" method="post">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="language">Programming Language</label>
+                        <input class="form-control" type="text" name="name" id="name" value="{{ lang.name }}" required>
+                    </div>
+                </div>
+                <input class="btn btn-danger" type="submit" value="SAVE">
+            </form>
+        </div>
+    </div>
+@endsection

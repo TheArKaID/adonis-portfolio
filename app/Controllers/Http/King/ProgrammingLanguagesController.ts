@@ -21,7 +21,7 @@ export default class ProgrammingLanguageController {
       ])
     })
 
-    let data = await request.validate({schema: validation})
+    let data = await request.validate({ schema: validation })
 
     await ProgrammingLanguage.create({
       name: data.name
@@ -32,12 +32,34 @@ export default class ProgrammingLanguageController {
     return response.redirect().toRoute('king.programming-language')
   }
 
-  public async show ({}: HttpContextContract) {
+  public async show({ view, params }: HttpContextContract) {
+    let language = await ProgrammingLanguage.find(params.id)
+
+    return view.render('king.language.edit', {
+      lang: language
+    })
   }
 
-  public async update ({}: HttpContextContract) {
+  public async update({ params, request, session, response }: HttpContextContract) {
+    let validation = schema.create({
+      name: schema.string({ trim: true, escape: true }, [
+        rules.required(),
+        rules.maxLength(255)
+      ])
+    })
+
+    let data = await request.validate({ schema: validation })
+
+    let lang = await ProgrammingLanguage.findOrFail(params.id)
+
+    lang.name = data.name
+    await lang.save()
+
+    session.flash('success', 'Programming Language Updated')
+
+    return response.redirect().toRoute('king.programming-language')
   }
 
-  public async destroy ({}: HttpContextContract) {
+  public async destroy({ }: HttpContextContract) {
   }
 }
