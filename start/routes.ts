@@ -39,8 +39,8 @@ Route.group(() => {
   Route.get('framework', 'King/FrameworksController.index').as('framework')
   Route.get('framework/create', 'King/FrameworksController.create').as('framework.create')
   Route.post('framework/create', 'King/FrameworksController.store').as('framework.create.post')
-  Route.get('framework/:id', '').as('framework.edit')
-  Route.post('framework/:id', '').as('framework.edit.post')
+  Route.get('framework/:id', 'King/FrameworksController.show').as('framework.edit')
+  Route.post('framework/:id', 'King/FrameworksController.update').as('framework.edit.post')
 
   Route.get('work', 'King/WorkExperiencesController.index').as('work')
   Route.get('work/create', 'King/WorkExperiencesController.create').as('work.create')

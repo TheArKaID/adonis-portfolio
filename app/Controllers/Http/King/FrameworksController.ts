@@ -21,7 +21,7 @@ export default class FrameworksController {
       ])
     })
 
-    let data = await request.validate({schema: validation})
+    let data = await request.validate({ schema: validation })
 
     await Framework.create({
       name: data.framework
@@ -32,10 +32,32 @@ export default class FrameworksController {
     return response.redirect().toRoute('king.framework')
   }
 
-  public async show({ }: HttpContextContract) {
+  public async show({ view, params }: HttpContextContract) {
+    let framework = await Framework.find(params.id)
+
+    return view.render('king.framework.edit', {
+      framework
+    })
   }
 
-  public async update({ }: HttpContextContract) {
+  public async update({ request, params, session, response }: HttpContextContract) {
+    let validation = schema.create({
+      name: schema.string({ trim: true, escape: true }, [
+        rules.required(),
+        rules.maxLength(255)
+      ])
+    })
+
+    let data = await request.validate({ schema: validation })
+
+    let lang = await Framework.findOrFail(params.id)
+
+    lang.name = data.name
+    await lang.save()
+
+    session.flash('success', 'Framework Updated')
+
+    return response.redirect().toRoute('king.framework')
   }
 
   public async destroy({ }: HttpContextContract) {
