@@ -60,6 +60,13 @@ export default class FrameworksController {
     return response.redirect().toRoute('king.framework')
   }
 
-  public async destroy({ }: HttpContextContract) {
+  public async destroy({ response, session, params }: HttpContextContract) {
+    let lang = await Framework.findOrFail(params.id)
+
+    await lang.delete()
+
+    session.flash('success', 'Framework Deleted')
+
+    return response.redirect().toRoute('king.framework')
   }
 }
