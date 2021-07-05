@@ -60,6 +60,13 @@ export default class ProgrammingLanguageController {
     return response.redirect().toRoute('king.programming-language')
   }
 
-  public async destroy({ }: HttpContextContract) {
+  public async destroy({ params, response, session }: HttpContextContract) {
+    let lang = await ProgrammingLanguage.findOrFail(params.id)
+
+    await lang.delete()
+
+    session.flash('success', 'Programming Language Deleted')
+
+    return response.redirect().toRoute('king.programming-language')
   }
 }
