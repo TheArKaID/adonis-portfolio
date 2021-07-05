@@ -14,6 +14,7 @@
 */
 
 import Logger from '@ioc:Adonis/Core/Logger'
+import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import HttpExceptionHandler from '@ioc:Adonis/Core/HttpExceptionHandler'
 
 export default class ExceptionHandler extends HttpExceptionHandler {
@@ -21,6 +22,21 @@ export default class ExceptionHandler extends HttpExceptionHandler {
     '403': 'errors/unauthorized',
     '404': 'errors/not-found',
     '500..599': 'errors/server-error',
+  }
+
+  public async handle(error: any, ctx: HttpContextContract) {
+    /**
+     * Self handle the validation exception
+     */
+    if (error.code === 'E_ROW_NOT_FOUND') {
+      ctx.session.flash('errors', ['Data Not Found'])
+      return ctx.response.redirect().back()
+    }
+
+    /**
+     * Forward rest of the exceptions to the parent class
+     */
+    return super.handle(error, ctx)
   }
 
   constructor () {
