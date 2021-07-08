@@ -92,6 +92,13 @@ export default class WorkExperiencesController {
     return response.redirect().toRoute('king.work')
   }
 
-  public async destroy({ }: HttpContextContract) {
+  public async destroy({ params, session, response }: HttpContextContract) {
+    let work = await WorkExperience.findOrFail(params.id)
+
+    await work.delete()
+
+    session.flash('success', 'WorkExperience Deleted')
+
+    return response.redirect().toRoute('king.work')
   }
 }

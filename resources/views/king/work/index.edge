@@ -25,7 +25,7 @@
                         <td>{{ work.status }}</td>
                         <td>
                             <a href='{{ route('king.work.edit', [work.id]) }}'><i class='fas fa-edit'></i></a>
-                            <a href=''><i class='fas fa-trash'></i></a>
+                            <a href='{{ route('king.work.delete', [work.id]) }}'><i class='fas fa-trash'></i></a>
                         </td>
                     </tr>
                 @else
