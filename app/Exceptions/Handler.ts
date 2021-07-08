@@ -30,7 +30,7 @@ export default class ExceptionHandler extends HttpExceptionHandler {
      */
     if (error.code === 'E_ROW_NOT_FOUND') {
       ctx.session.flash('errors', ['Data Not Found'])
-      return ctx.response.redirect().back()
+      return ctx.response.redirect().toPath('/' + ctx.request.url().split('/').splice(1, 2).join('/'))
     }
 
     /**
@@ -39,7 +39,7 @@ export default class ExceptionHandler extends HttpExceptionHandler {
     return super.handle(error, ctx)
   }
 
-  constructor () {
+  constructor() {
     super(Logger)
   }
 }
