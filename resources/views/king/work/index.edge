@@ -24,7 +24,7 @@
                         <td>{{ work.tahun }}</td>
                         <td>{{ work.status }}</td>
                         <td>
-                            <a href=''><i class='fas fa-edit'></i></a>
+                            <a href='{{ route('king.work.edit', [work.id]) }}'><i class='fas fa-edit'></i></a>
                             <a href=''><i class='fas fa-trash'></i></a>
                         </td>
                     </tr>

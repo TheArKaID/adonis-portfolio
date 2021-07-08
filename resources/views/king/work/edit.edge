@@ -1,0 +1,81 @@
+@layout('layouts.app')
+
+@section('content')
+    <div class="col-md-12" style="margin: 16px 8px 16px 8px; width: -moz-available; font-family: ubuntuFont">
+        <div class="row myred" style="padding: 20px;">
+            <form style="width: 100%" id="formWork" action="{{ route('king.work.edit.post', [work.id]) }}" method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="posisi">Posisi</label>
+                            <input class="form-control" type="text" name="posisi" id="posisi" value="{{ work.posisi }}" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="perusahaan">Perusahaan</label>
+                            <input class="form-control" type="text" name="perusahaan" id="perusahaan" value="{{ work.perusahaan }}" required>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <input class="form-control" type="text" name="status" id="status" value="{{ work.status }}" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="tahun">Tahun</label>
+                            <input class="form-control" type="text" name="tahun" id="tahun" value="{{ work.tahun }}" required>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="alaat">Alamat</label>
+                            <textarea name="alamat" id="alamat" class="form-control" cols="30" rows="5" required>{{ work.alamat }}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group" style="color: black">
+                            <label for="tasks">Tasks</label>
+                            <textarea name="tasks" id="tasks" class="form-control" cols="30" rows="10" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-danger" onclick="submitForm()" type="submit">Simpan</button>
+            </form>
+        </div>
+    </div>
+@endsection
+
+@section('scripts')
+    <script src="/assets/js/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#tasks' ))
+            .then( editor => {
+                editor.setData(`{{{work.tasks}}}`)
+                console.log('Editor initialized');
+            } )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+    <script>
+        function submitForm() {
+            document.getElementById('formWork').submit()
+        }
+    </script>
+@endsection
+
+@section('styles')
+<style>
+    .ck-editor__editable
+    {
+       min-height: 150px !important;
+       /* max-height: 400px !important; */
+    }
+   </style>
+   
+@endsection
